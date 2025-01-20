@@ -11,7 +11,7 @@ export function useFilters() {
       applyFilters()
     },
     {
-      deep: true,
+      deep: true
     }
   )
 
@@ -30,7 +30,7 @@ export function useFilters() {
   }
 
   const getFilters = () => {
-    filters.value = { ...route.query }
+    filters.value = { ...(route.query as IFilters) }
   }
 
   const updateFilters = (filterKey: string, filterValue: string) => {

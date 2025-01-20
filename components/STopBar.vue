@@ -28,8 +28,9 @@ const links = computed(() => {
       }"
     />
     <slot name="theme-switch">
-      <div class="ml-auto">
+      <div class="flex ml-auto">
         <s-theme-switch />
+        <s-lang-switcher />
       </div>
     </slot>
   </div>
