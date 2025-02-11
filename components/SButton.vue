@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { ButtonColor } from '#ui/types'
+
 defineProps<{
-  color?: IButtonColor
+  color?: ButtonColor
   icon?: string
   isDisabled?: boolean
   isLoading?: boolean

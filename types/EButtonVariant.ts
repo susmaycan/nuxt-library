@@ -1,7 +1,8 @@
 export enum EButtonVariant {
   solid = 'solid',
   outline = 'outline',
-  link = 'link'
+  link = 'link',
+  ghost = 'ghost'
 }
 
-export type IButtonVariant = 'solid' | 'outline' | 'link'
+export type IButtonVariant = keyof typeof EButtonVariant

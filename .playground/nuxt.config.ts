@@ -13,7 +13,8 @@ export default defineNuxtConfig({
         file: 'es.json',
         name: 'Español'
       }
-    ]
+    ],
+    defaultLocale: 'en'
   },
   compatibilityDate: '2025-01-20'
 })

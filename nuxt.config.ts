@@ -1,24 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', '@nuxtjs/i18n', '@nuxt/ui'],
   // Start - Copy this config to root project
+  modules: ['@vueuse/nuxt', '@nuxtjs/i18n', '@nuxt/ui'],
   i18n: {
     strategy: 'no_prefix',
-    locales: [
-      {
-        code: 'en',
-        file: 'en.json',
-        name: 'English'
-      },
-      {
-        code: 'es',
-        file: 'es.json',
-        name: 'Español'
-      }
-    ],
-    lazy: true,
-    defaultLocale: 'en'
+    locales: [],
+    lazy: true
   },
   imports: {
     dirs: ['./types']

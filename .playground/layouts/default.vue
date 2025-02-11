@@ -1,16 +1,20 @@
 <script setup lang="ts">
 const { t } = useTranslation()
 
-const guestLinks = computed(() => [
-  { label: t('home'), to: '/' },
-  { label: t('login'), to: '/login' },
-  { label: t('register'), to: '/register' }
+const links = computed<ISidebarLink[]>(() => [
+  { label: t('home'), to: '/', authenticated: true, placement: 'left' },
+  { label: t('login'), to: '/login', authenticated: false, placement: 'left' },
+  { label: t('register'), to: '/register', authenticated: false, placement: 'left' },
+  { label: t('profile'), to: '/profile', authenticated: true, placement: 'right' }
 ])
-const authenticatedLinks = computed(() => [{ label: t('profile'), to: '/profile' }])
 </script>
 <template>
   <div>
-    <s-top-bar :guest-links="guestLinks" :authenticated-links="authenticatedLinks" />
+    <s-top-bar :links="links">
+      <template #title>
+        <h1>Playground</h1>
+      </template>
+    </s-top-bar>
     <slot />
   </div>
 </template>
