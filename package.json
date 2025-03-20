@@ -1,5 +1,5 @@
 {
-  "name": "my-nuxt-layer",
+  "name": "susmaycan-lib",
   "type": "module",
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "dayjs": "^1.11.11",
-    "@nuxt/ui": "^2.21.0",
-    "@nuxtjs/i18n": "^9.1.1",
-    "@vueuse/core": "^12.2.0",
-    "@vueuse/nuxt": "^12.2.0"
+    "@nuxt/ui": "^2.21.1",
+    "@nuxtjs/i18n": "^9.3.2",
+    "@vueuse/core": "^12.8.2",
+    "@vueuse/nuxt": "^12.8.2"
   },
   "devDependencies": {
     "@nuxt/eslint": "latest",
-    "eslint": "^9.18.0",
-    "nuxt": "^3.15.2",
-    "typescript": "^5.7.3",
+    "eslint": "^9.22.0",
+    "nuxt": "^3.16.1",
+    "typescript": "^5.8.2",
     "vue": "latest"
   }
 }
