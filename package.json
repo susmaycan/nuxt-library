@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "dayjs": "^1.11.11",
-    "@nuxt/ui": "^2.21.1",
-    "@nuxtjs/i18n": "^9.3.2",
+    "@nuxt/ui": "^2.22.0",
+    "@nuxtjs/i18n": "^9.5.3",
     "@vueuse/core": "^12.8.2",
     "@vueuse/nuxt": "^12.8.2"
   },
   "devDependencies": {
     "@nuxt/eslint": "latest",
-    "eslint": "^9.22.0",
-    "nuxt": "^3.16.1",
-    "typescript": "^5.8.2",
+    "eslint": "^9.25.1",
+    "nuxt": "^3.16.2",
+    "typescript": "^5.8.3",
     "vue": "latest"
   }
 }

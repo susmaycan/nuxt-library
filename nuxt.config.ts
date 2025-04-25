@@ -6,7 +6,10 @@ export default defineNuxtConfig({
   i18n: {
     strategy: 'no_prefix',
     locales: [],
-    lazy: true
+    lazy: true,
+    bundle: {
+      optimizeTranslationDirective: false
+    }
   },
   imports: {
     dirs: ['./types']
