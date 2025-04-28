@@ -8,14 +8,16 @@ const isDark = computed({
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
   }
 })
+
+const { t } = useTranslation()
 </script>
 
 <template>
   <u-button
-    :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
+    :aria-label="t('change_theme')"
     color="gray"
+    :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
     variant="ghost"
-    aria-label="Theme"
     @click="isDark = !isDark"
   />
 </template>

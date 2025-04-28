@@ -10,11 +10,14 @@ const links = computed<ISidebarLink[]>(() => [
 </script>
 <template>
   <div>
+    <s-skip-to-main-content />
     <s-top-bar :links="links">
       <template #title>
         <h1>Playground</h1>
       </template>
     </s-top-bar>
-    <slot />
+    <main id="main">
+      <slot />
+    </main>
   </div>
 </template>

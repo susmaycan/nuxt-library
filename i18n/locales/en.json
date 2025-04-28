@@ -1,3 +1,6 @@
 {
-  "test": "Place here your locales"
+  "change_theme": "Change theme",
+  "language_selector": "Language selector",
+  "language": "Language",
+  "skip_to_content": "Skip to content"
 }

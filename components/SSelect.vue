@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   options: ISelectOption[]
   value: string
 }>()
@@ -12,11 +12,11 @@ const onChange = (newValue: string) => {
 </script>
 
 <template>
-  <u-inputMenu
+  <u-input-menu
     :model-value="value"
     :options="options"
-    @change="onChange"
     option-attribute="name"
     value-attribute="value"
+    @change="onChange"
   />
 </template>

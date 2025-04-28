@@ -5,7 +5,18 @@ export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', '@nuxtjs/i18n', '@nuxt/ui'],
   i18n: {
     strategy: 'no_prefix',
-    locales: [],
+    locales: [
+      {
+        code: 'en',
+        file: 'en.json',
+        name: 'English'
+      },
+      {
+        code: 'es',
+        file: 'es.json',
+        name: 'Español'
+      }
+    ],
     lazy: true,
     bundle: {
       optimizeTranslationDirective: false
