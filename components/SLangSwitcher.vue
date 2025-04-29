@@ -1,7 +1,13 @@
 <script setup lang="ts">
-const { localeOptions, selectedLocale, setLocale } = useTranslation()
+const { localeOptions, selectedLocale, setLocale, t } = useTranslation()
 </script>
 
 <template>
-  <s-select :options="localeOptions" :value="selectedLocale" @change="setLocale" />
+  <s-select
+    :aria-label="t('language')"
+    :options="localeOptions"
+    :value="selectedLocale"
+    name="language-selector"
+    @change="setLocale"
+  />
 </template>
