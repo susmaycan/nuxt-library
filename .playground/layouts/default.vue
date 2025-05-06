@@ -7,6 +7,11 @@ const links = computed<ISidebarLink[]>(() => [
   { label: t('register'), to: '/register', authenticated: false, placement: 'left' },
   { label: t('profile'), to: '/profile', authenticated: true, placement: 'right' }
 ])
+
+onBeforeMount(() => {
+  const { initAuthentication } = useAuth()
+  initAuthentication()
+})
 </script>
 <template>
   <div>

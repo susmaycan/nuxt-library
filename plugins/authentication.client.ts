@@ -1,5 +1,4 @@
 export default defineNuxtPlugin(() => {
-  const { initAuthentication } = useAuth()
-
-  initAuthentication()
+  // const { initAuthentication } = useAuth()
+  // initAuthentication()
 })
