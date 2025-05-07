@@ -12,11 +12,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "dayjs": "^1.11.11",
     "@nuxt/ui": "^2.22.0",
     "@nuxtjs/i18n": "^9.5.4",
     "@vueuse/core": "^12.8.2",
-    "@vueuse/nuxt": "^12.8.2"
+    "@vueuse/nuxt": "^12.8.2",
+    "dayjs": "^1.11.11"
   },
   "devDependencies": {
     "@nuxt/eslint": "latest",

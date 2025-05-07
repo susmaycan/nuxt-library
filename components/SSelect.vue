@@ -1,9 +1,12 @@
 <script setup lang="ts">
 defineProps<{
-  label?: string
   ariaLabel?: string
+  isDisabled?: boolean
+  isLoading?: boolean
+  label?: string
   name?: string
   options: ISelectOption[]
+  placeholder?: string
   value: string
 }>()
 
@@ -20,7 +23,10 @@ const onChange = (newValue: string) => {
     <u-input-menu
       :id="name"
       :aria-label="ariaLabel || label"
+      :disabled="isDisabled || isLoading"
+      :loading="isLoading"
       :model-value="value"
+      :placeholder="placeholder"
       :options="options"
       option-attribute="name"
       value-attribute="value"

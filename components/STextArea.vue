@@ -6,6 +6,7 @@ defineProps<{
   isLoading?: boolean
   label?: string
   placeholder?: string
+  rows?: number
   type?: 'password'
   value?: string
 }>()
@@ -29,7 +30,7 @@ const onClearInput = () => {
 </script>
 <template>
   <label v-if="label" class="font-bold" :for="id">{{ label }} </label>
-  <u-input
+  <u-textarea
     :id="id"
     :disabled="isLoading || isDisabled"
     :icon="icon"
@@ -37,6 +38,7 @@ const onClearInput = () => {
     :model-value="value"
     :placeholder="placeholder"
     size="lg"
+    :rows="rows"
     :type="type"
     :ui="{ icon: { trailing: { pointer: '' } } }"
     @change="onChange"
@@ -53,6 +55,6 @@ const onClearInput = () => {
         @click.stop="onClearInput"
       />
     </template>
-  </u-input>
+  </u-textarea>
 </template>
 <style scoped></style>
