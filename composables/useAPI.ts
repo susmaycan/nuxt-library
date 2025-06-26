@@ -19,7 +19,6 @@ export function useAPI<T>(
     ...options,
     headers: {
       ...options?.headers,
-      'Content-Type': 'multipart/form-data',
       Authorization: token.value ? `Token ${token.value}` : ''
     },
     immediate: false
