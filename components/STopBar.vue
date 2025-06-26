@@ -71,7 +71,7 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
           </div>
 
           <u-vertical-navigation
-            :links="links"
+            :links="generalLinks"
             :ui="{
               active: 'text-xl py-3',
               inactive: 'text-xl py-3',
