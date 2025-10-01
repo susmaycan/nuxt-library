@@ -1,15 +1,16 @@
 <script setup lang="ts">
+const { t } = useTranslation()
+
 const colorMode = useColorMode()
+
 const isDark = computed({
   get() {
     return colorMode.value === 'dark'
   },
-  set() {
-    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+  set(_isDark) {
+    colorMode.preference = _isDark ? 'dark' : 'light'
   }
 })
-
-const { t } = useTranslation()
 </script>
 
 <template>

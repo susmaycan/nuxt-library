@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type { ButtonColor } from '#ui/types'
-
 defineProps<{
-  color?: ButtonColor
+  color?: 'error' | 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'neutral'
   icon?: string
   isDisabled?: boolean
   isLoading?: boolean
@@ -23,6 +21,7 @@ const emits = defineEmits(['click'])
     :type="isSubmitButton ? 'submit' : undefined"
     :variant="variant || 'solid'"
     @click="emits('click')"
+    :ui="{ base: 'cursor-pointer' }"
   >
     <slot />
   </u-button>

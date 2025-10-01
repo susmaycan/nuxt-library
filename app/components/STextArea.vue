@@ -17,9 +17,12 @@ const onChange = (newValue: string) => {
   emits('change', newValue)
 }
 const onInput = (newValue: string) => {
+  console.log('🚀 ~ onInput ~ onInput:', newValue)
+
   emits('input', newValue)
 }
 const onEnter = () => {
+  console.log('🚀 ~ onInput ~ onInput:')
   emits('enter')
 }
 

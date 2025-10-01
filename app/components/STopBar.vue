@@ -5,16 +5,22 @@ const props = defineProps<{
   links: ISidebarLink[]
 }>()
 
-const generalLinks = computed(() => {
-  const leftLinks = props.links
+const centerLinks = computed(() =>
+  props.links
+    .filter((link) => link.placement === 'center')
+    .filter((link) => link.authenticated === isAuthenticated.value)
+)
+const leftLinks = computed(() =>
+  props.links
     .filter((link) => link.placement === 'left')
     .filter((link) => link.authenticated === isAuthenticated.value)
-  const rightLinks = props.links
+)
+
+const rightLinks = computed(() =>
+  props.links
     .filter((link) => link.placement === 'right')
     .filter((link) => link.authenticated === isAuthenticated.value)
-
-  return [leftLinks, rightLinks]
-})
+)
 
 const isOpen = ref(false)
 const toggleSidebar = () => (isOpen.value = !isOpen.value)
@@ -22,10 +28,23 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
 
 <template>
   <client-only>
-    <div v-if="!isMobile" class="flex justify-center items-center mb-5">
-      <slot name="title" />
-      <u-horizontal-navigation
-        :links="generalLinks"
+    <div v-if="!isMobile" class="flex justify-between items-center mb-5">
+      <div class="flex items-center mr-auto gap-1">
+        <slot name="title" />
+        <u-navigation-menu
+          :items="leftLinks"
+          :ui="{
+            active: 'text-xl py-3',
+            inactive: 'text-xl py-3',
+            avatar: {
+              size: 'md'
+            }
+          }"
+        />
+        <slot name="left" />
+      </div>
+      <u-navigation-menu
+        :items="centerLinks"
         :ui="{
           active: 'text-xl py-3',
           inactive: 'text-xl py-3',
@@ -35,6 +54,16 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
         }"
       />
       <div class="flex items-center ml-auto">
+        <u-navigation-menu
+          :items="rightLinks"
+          :ui="{
+            active: 'text-xl py-3',
+            inactive: 'text-xl py-3',
+            avatar: {
+              size: 'md'
+            }
+          }"
+        />
         <slot name="right">
           <s-theme-switch />
           <s-lang-switcher />
@@ -53,7 +82,7 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
         <slot name="right" />
       </div>
 
-      <u-slideover v-model="isOpen" :overlay="false" side="left">
+      <!-- <u-slideover v-model="isOpen" :overlay="false" side="left">
         <div class="p-4 flex-1">
           <div class="flex items-center justify-between pb-2">
             <s-button
@@ -71,8 +100,8 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
             />
           </div>
 
-          <u-vertical-navigation
-            :links="generalLinks"
+          <u-navigation-menu
+            :items="generalLinks"
             :ui="{
               active: 'text-xl py-3',
               inactive: 'text-xl py-3',
@@ -84,7 +113,7 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
           />
           <slot name="bottom" />
         </div>
-      </u-slideover>
+      </u-slideover> -->
     </div>
   </client-only>
 </template>
