@@ -4,13 +4,19 @@ definePageMeta({
 })
 const { authenticate } = useAuth()
 
+const router = useRouter()
+
 const login = () => {
+  console.log('🚀 ~ login ~ login:')
+
   const dummyUser: IUser = {
     email: 'dummyUser@test.com',
     _id: '123',
     is_staff: false
   }
   authenticate('dummyToken', dummyUser)
+
+  router.push('/')
 }
 </script>
 

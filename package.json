@@ -12,16 +12,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@nuxt/ui": "^2.22.3",
-    "@nuxtjs/i18n": "^9.5.6",
-    "@vueuse/core": "^12.8.2",
-    "@vueuse/nuxt": "^12.8.2",
+    "@nuxt/ui": "^4.0.0",
+    "@nuxtjs/i18n": "^10.1.0",
+    "@vueuse/core": "^13.9.0",
+    "@vueuse/nuxt": "^13.9.0",
     "dayjs": "^1.11.11"
   },
   "devDependencies": {
     "@nuxt/eslint": "latest",
     "eslint": "^9.36.0",
-    "nuxt": "^3.19.2",
+    "nuxt": "^4.1.2",
     "typescript": "^5.9.3",
     "vue": "latest"
   }

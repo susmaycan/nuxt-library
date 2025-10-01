@@ -27,10 +27,10 @@ const onChange = (newValue: string) => {
       :loading="isLoading"
       :model-value="value"
       :placeholder="placeholder"
-      :options="options"
-      option-attribute="name"
-      value-attribute="value"
-      @change="onChange"
+      :items="options"
+      label-key="name"
+      value-key="value"
+      @update:modelValue="onChange"
     />
   </div>
 </template>

@@ -16,11 +16,7 @@ export default defineNuxtConfig({
         file: 'es.json',
         name: 'Español'
       }
-    ],
-    lazy: true,
-    bundle: {
-      optimizeTranslationDirective: false
-    }
+    ]
   },
   imports: {
     dirs: ['./types']
@@ -30,5 +26,6 @@ export default defineNuxtConfig({
     public: {
       API_URL: '' // Set the API URL here (if needed)
     }
-  }
+  },
+  css: ['./app/assets/css/main.css']
 })
