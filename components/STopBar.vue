@@ -23,6 +23,7 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
 <template>
   <client-only>
     <div v-if="!isMobile" class="flex justify-center items-center mb-5">
+      <slot name="title" />
       <u-horizontal-navigation
         :links="generalLinks"
         :ui="{
