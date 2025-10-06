@@ -31,89 +31,51 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
     <div v-if="!isMobile" class="flex justify-between items-center mb-5">
       <div class="flex items-center mr-auto gap-1">
         <slot name="title" />
-        <u-navigation-menu
-          :items="leftLinks"
-          :ui="{
-            active: 'text-xl py-3',
-            inactive: 'text-xl py-3',
-            avatar: {
-              size: 'md'
-            }
-          }"
-        />
+        <u-navigation-menu :items="leftLinks" />
         <slot name="left" />
       </div>
-      <u-navigation-menu
-        :items="centerLinks"
-        :ui="{
-          active: 'text-xl py-3',
-          inactive: 'text-xl py-3',
-          avatar: {
-            size: 'md'
-          }
-        }"
-      />
+      <u-navigation-menu :items="centerLinks" />
       <div class="flex items-center ml-auto">
-        <u-navigation-menu
-          :items="rightLinks"
-          :ui="{
-            active: 'text-xl py-3',
-            inactive: 'text-xl py-3',
-            avatar: {
-              size: 'md'
-            }
-          }"
-        />
+        <u-navigation-menu :items="rightLinks" />
         <slot name="right">
           <s-theme-switch />
           <s-lang-switcher />
         </slot>
       </div>
     </div>
-    <div v-else class="flex items-center justify-between mb-5 text-center">
-      <s-button
-        color="gray"
-        icon="i-heroicons-bars-3"
-        :variant="EButtonVariant.ghost"
-        @click="toggleSidebar"
-      />
-      <slot name="title" />
-      <div class="flex items-center">
-        <slot name="right" />
-      </div>
-
-      <!-- <u-slideover v-model="isOpen" :overlay="false" side="left">
-        <div class="p-4 flex-1">
-          <div class="flex items-center justify-between pb-2">
-            <s-button
-              color="gray"
-              icon="i-heroicons-bars-3"
-              :variant="EButtonVariant.ghost"
-              @click="toggleSidebar"
-            />
-            <slot name="title" />
-            <s-button
-              color="gray"
-              icon="i-heroicons-x-mark-20-solid"
-              :variant="EButtonVariant.ghost"
-              @click="isOpen = false"
-            />
-          </div>
-
-          <u-navigation-menu
-            :items="generalLinks"
-            :ui="{
-              active: 'text-xl py-3',
-              inactive: 'text-xl py-3',
-              avatar: {
-                size: 'md'
-              }
-            }"
-            @click="isOpen = false"
+    <div v-else>
+      <u-slideover
+        v-model:open="isOpen"
+        :overlay="false"
+        side="left"
+        aria-describedby="sidebar menu mobile"
+      >
+        <div class="flex items-center gap-1 sidebar-activator">
+          <s-button
+            color="neutral"
+            icon="i-heroicons-bars-3"
+            class="menu-button"
+            :variant="EButtonVariant.link"
           />
-          <slot name="bottom" />
+          <slot name="title" />
         </div>
-      </u-slideover> -->
+        <template #title> <slot name="title" /> </template>
+        <template #body>
+          <u-navigation-menu :items="centerLinks" orientation="vertical" @click="toggleSidebar" />
+          <u-navigation-menu :items="rightLinks" orientation="vertical" @click="toggleSidebar" />
+        </template>
+        <template #footer>
+          <slot name="right">
+            <s-theme-switch />
+            <s-lang-switcher />
+          </slot>
+        </template>
+      </u-slideover>
     </div>
   </client-only>
 </template>
+<style>
+.sidebar-activator > button {
+  padding-left: 0 !important;
+}
+</style>

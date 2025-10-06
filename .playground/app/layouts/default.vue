@@ -21,7 +21,7 @@ onBeforeMount(() => {
       <template #header>
         <s-top-bar :links="links">
           <template #title>
-            <h1>Playground</h1>
+            <h1>🥑 Playground</h1>
           </template>
         </s-top-bar>
       </template>

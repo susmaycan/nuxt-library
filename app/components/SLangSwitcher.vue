@@ -1,7 +1,5 @@
 <script setup lang="ts">
 const { localeOptions, selectedLocale, setLocale, t, locales } = useTranslation()
-console.log('🚀 ~ locales:', locales.value)
-console.log('🚀 ~ localeOptions:', localeOptions.value)
 </script>
 
 <template>

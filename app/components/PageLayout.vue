@@ -14,10 +14,21 @@
 </template>
 <style lang="css" scoped>
 .main-content {
+  margin-block: 20px;
   width: 80%;
 }
 
 .main-header {
   margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    width: 90%;
+  }
+
+  .main-header {
+    margin-bottom: 20px;
+  }
 }
 </style>

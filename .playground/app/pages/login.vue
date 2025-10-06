@@ -7,8 +7,6 @@ const { authenticate } = useAuth()
 const router = useRouter()
 
 const login = () => {
-  console.log('🚀 ~ login ~ login:')
-
   const dummyUser: IUser = {
     email: 'dummyUser@test.com',
     _id: '123',
