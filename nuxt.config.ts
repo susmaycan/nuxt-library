@@ -26,6 +26,5 @@ export default defineNuxtConfig({
     public: {
       API_URL: '' // Set the API URL here (if needed)
     }
-  },
-  css: ['./app/assets/css/main.css']
+  }
 })
