@@ -35,6 +35,7 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
         <slot name="left" />
       </div>
       <u-navigation-menu :items="centerLinks" />
+      <slot name="center" />
       <div class="flex items-center ml-auto">
         <u-navigation-menu :items="rightLinks" />
         <slot name="right">
@@ -62,6 +63,7 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
         <template #title> <slot name="title" /> </template>
         <template #body>
           <u-navigation-menu :items="centerLinks" orientation="vertical" @click="toggleSidebar" />
+          <slot name="center" />
           <u-navigation-menu :items="rightLinks" orientation="vertical" @click="toggleSidebar" />
         </template>
         <template #footer>
