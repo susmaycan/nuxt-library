@@ -7,9 +7,10 @@ const inputValue = ref('')
 const textAreaValue = ref('')
 const selectValue = ref('')
 const radioValue = ref('')
+const toggleValue = ref(false)
 </script>
 <template>
-  <div class="">
+  <div>
     <s-title>{{ $t('components') }}</s-title>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="flex flex-col gap-1">
@@ -78,6 +79,23 @@ const radioValue = ref('')
           @input="radioValue = $event"
         />
       </div>
+    </div>
+    <div class="flex flex-col gap-1">
+      <s-subtitle>Toggle input</s-subtitle>
+      <p>Selected value: {{ toggleValue }}</p>
+      <s-radio-input
+        label="Choose an option"
+        :options="[
+          { name: 'Option A', value: 'A' },
+          {
+            name: 'Option B',
+            value: 'B'
+          },
+          { name: 'Option C', value: 'C' }
+        ]"
+        :value="radioValue"
+        @input="radioValue = $event"
+      />
     </div>
   </div>
 </template>
